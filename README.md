@@ -137,6 +137,33 @@ Claude Codeの`.mcp.json`(またはembodied-claude側のMCP設定)に`m5-petit-m
 
 ## 4. ボディを組み立て・書き込み設定
 
+左からM5 Core S3本体・バッテリー(700mAhバージョン)・バッテリー(500mAh)バージョン
+![](./img/setup00.jpg)
+
+サイズの違う２つの六角レンチでねじを回します。
+ボディの外側は大きなもの、内側は小さなものを使います
+![](./img/setup07.jpg)
+
+本体の裏の4つのネジを六角レンチで外します。
+![](./img/setup06.jpg)
+
+バッテリー(700mAh)の緑の基板を図のようにおいて、
+上下を小さなネジでとめます(写真は上だけ止めている状態です)
+![](./img/setup02.jpg)
+
+バッテリーのケーブルをCoreS3の裏に写真のように左右間違えないように気をつけて差し込みます
+
+![](./img/setup04.jpg)
+
+ピンをはめて裏側をネジで４つとめます。長さに注意してください。
+![](./img/setup05.jpg)
+
+
+SDカードの差し込み方
+![](./img/setup09.jpg)
+![](./img/setup08.jpg)
+
+
 1. 電池・SDカードをボディに取り付ける
 2. ファームウェア(.ino)を書き込む — ファームウェアは m5-petit-scripts にあります
 
@@ -150,7 +177,7 @@ git clone https://github.com/PetitOnes/m5-petit-scripts.git
 
 **→ [M5Stack CoreS3 セットアップ手順](https://github.com/PetitOnes/m5-petit-scripts/blob/main/HOW_TO_SETUP_M5_CORES3.md)**
 
-概要だけ書くと、`m5_core_s3_scripts/arduino_ino/`の`credentials.example.h`を`credentials.h`にコピーして自宅WiFiの情報を書き、`config.h`に名前を設定して、Arduino IDEで書き込みます。
+概要だけ書くと、WiFiや名前の設定はSDカードに置く`config.txt`に書くだけです(プログラムの書き換えは不要)。ファームウェアの書き込みはArduino IDEで行います(ブラウザから1クリックで書き込める仕組みも準備中です)。
 
 ## 5. Webアプリで会話してみる
 

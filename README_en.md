@@ -153,7 +153,7 @@ Follow the flashing guide for the detailed steps (it covers everything from inst
 
 **→ [M5Stack CoreS3 Setup Guide](https://github.com/PetitOnes/m5-petit-scripts/blob/main/HOW_TO_SETUP_M5_CORES3.md)** (Japanese — English version coming soon)
 
-In short: copy `m5_core_s3_scripts/arduino_ino/credentials.example.h` to `credentials.h`, fill in your home WiFi details, set your name in `config.h`, and flash with the Arduino IDE.
+In short: your WiFi and name settings just go into a `config.txt` file on the SD card (no code editing needed). Flash the firmware with the Arduino IDE (a one-click browser flashing page is also in the works).
 
 ## 5. Chat with it through the web app
 
