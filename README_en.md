@@ -9,6 +9,15 @@ Thanks for your interest in the M5 Petits!
 This guide walks you through the steps to bring a Petit home.
 We recommend following along with the WebPage (coming soon) and YouTube channel (coming soon) too.
 
+## Before you start (what you'll need)
+
+- **No soldering required.** Buy the parts, put them together, and flash from your PC — that's it
+- A **PC** (Windows / macOS / Linux — anything that runs the Arduino IDE and Claude Code)
+- A **Claude subscription** ([Pro](https://claude.com/pricing): from $20/month) or an **API key**. The Petit's brain is Claude, so this is an ongoing cost on top of the hardware
+- Home **WiFi** (2.4GHz)
+- Cost estimate: about **¥14,000** for the hardware, plus the Claude subscription
+- Time estimate: about **half a day** once the parts arrive (including PC setup)
+
 # Table of contents
 
 Follow these steps in order to bring a Petit home.
@@ -140,9 +149,11 @@ https://github.com/PetitOnes/m5-petit-scripts
 git clone https://github.com/PetitOnes/m5-petit-scripts.git
 ```
 
-Copy `credentials.example.h` to `credentials.h`, fill in your WiFi/WireGuard details, and flash it with the Arduino IDE or PlatformIO.
+Follow the flashing guide for the detailed steps (it covers everything from installing the Arduino IDE to preparing the SD card and verifying it works, with screenshots):
 
-> 🚧 The firmware template is still a work in progress.
+**→ [M5Stack CoreS3 Setup Guide](https://github.com/PetitOnes/m5-petit-scripts/blob/main/HOW_TO_SETUP_M5_CORES3.md)** (Japanese — English version coming soon)
+
+In short: copy `m5_core_s3_scripts/arduino_ino/credentials.example.h` to `credentials.h`, fill in your home WiFi details, set your name in `config.h`, and flash with the Arduino IDE.
 
 ## 5. Chat with it through the web app
 
