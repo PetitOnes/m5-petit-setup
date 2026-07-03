@@ -6,7 +6,16 @@
 
 ぷちたちに興味を持っていただきありがとうございます！
 ここではぷちたちをお迎えする手順を紹介していきます。
-WebPage(工事中)やYoutube(準備中)も見ながら勧めていくことをおすすめします。
+WebPage(工事中)やYoutube(準備中)も見ながら進めていくことをおすすめします。
+
+## はじめに（必要なもの・かかるもの）
+
+- **はんだ付けは不要です。** 部品を買って、組み付けて、PCから書き込むだけで動きます
+- **PC**が必要です（Windows / macOS / Linux いずれも可。Arduino IDEとClaude Codeが動けばOK）
+- **Claudeのサブスクリプション**（[Pro](https://claude.com/pricing)：月$20〜）または**APIキー**が必要です。ぷちの頭脳はClaudeなので、本体代とは別にこの継続費用がかかります
+- 自宅の**WiFi**（2.4GHz）が必要です
+- 費用の目安：本体・付属品で**約¥14,000**＋Claudeの月額
+- 所要時間の目安：部品が届いてから**半日**ほど（PC環境構築含む）
 
 # 目次
 
@@ -137,9 +146,11 @@ https://github.com/PetitOnes/m5-petit-scripts
 git clone https://github.com/PetitOnes/m5-petit-scripts.git
 ```
 
-`credentials.example.h`を`credentials.h`にコピーしてWiFi/WireGuard情報を書き込み、Arduino IDEまたはPlatformIOで書き込んでください。
+詳しい手順は書き込みガイドを見ながら進めてください（Arduino IDEの導入からSDカードの準備、動作確認まで画像つきで説明しています）：
 
-> 🚧 ファームウェアのテンプレートは準備中です。
+**→ [M5Stack CoreS3 セットアップ手順](https://github.com/PetitOnes/m5-petit-scripts/blob/main/HOW_TO_SETUP_M5_CORES3.md)**
+
+概要だけ書くと、`m5_core_s3_scripts/arduino_ino/`の`credentials.example.h`を`credentials.h`にコピーして自宅WiFiの情報を書き、`config.h`に名前を設定して、Arduino IDEで書き込みます。
 
 ## 5. Webアプリで会話してみる
 
