@@ -169,19 +169,15 @@ SDカードの差し込み方
 
 
 1. 電池・SDカードをボディに取り付ける
-2. ファームウェア(.ino)を書き込む — ファームウェアは m5-petit-scripts にあります
+2. ファームウェア(.ino)を書き込む — ファームウェアは m5-petit-firmware にあります
 
-https://github.com/PetitOnes/m5-petit-scripts
+https://github.com/PetitOnes/m5-petit-firmware
 
-```bash
-git clone https://github.com/PetitOnes/m5-petit-scripts.git
-```
+詳しい手順は書き込みガイドを見ながら進めてください（設定ファイルの作成からSDカードの準備、動作確認まで画像つきで説明しています）：
 
-詳しい手順は書き込みガイドを見ながら進めてください（Arduino IDEの導入からSDカードの準備、動作確認まで画像つきで説明しています）：
+**→ [M5Stack CoreS3 セットアップ手順](https://github.com/PetitOnes/m5-petit-firmware/blob/main/HOW_TO_SETUP_M5_CORES3.md)**
 
-**→ [M5Stack CoreS3 セットアップ手順](https://github.com/PetitOnes/m5-petit-scripts/blob/main/HOW_TO_SETUP_M5_CORES3.md)**
-
-概要だけ書くと、WiFiや名前の設定はSDカードに置く`config.txt`に書くだけです(プログラムの書き換えは不要)。ファームウェアの書き込みはArduino IDEで行います(ブラウザから1クリックで書き込める仕組みも準備中です)。
+概要だけ書くと、WiFiや名前の設定はSDカードに置く`config.txt`に書くだけです(プログラムの書き換えは不要)。書き込みはブラウザから1クリックでできる[M5 Petit Web Flasher](https://petitones.github.io/m5-petit-firmware/)が使えます(コードをいじりたい人はArduino IDEでもOK)。
 
 ## 5. Webアプリで会話してみる
 

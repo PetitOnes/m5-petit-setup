@@ -141,19 +141,15 @@ Add `m5-petit-mcp` to Claude Code's `.mcp.json` (or embodied-claude's own MCP co
 ## 4. Assemble the body / flash the firmware
 
 1. Attach the battery and SD card to the body.
-2. Flash the firmware (`.ino`) — the firmware lives in m5-petit-scripts.
+2. Flash the firmware (`.ino`) — the firmware lives in m5-petit-firmware.
 
-https://github.com/PetitOnes/m5-petit-scripts
+https://github.com/PetitOnes/m5-petit-firmware
 
-```bash
-git clone https://github.com/PetitOnes/m5-petit-scripts.git
-```
+Follow the flashing guide for the detailed steps (it covers everything from writing the config file to preparing the SD card and verifying it works, with screenshots):
 
-Follow the flashing guide for the detailed steps (it covers everything from installing the Arduino IDE to preparing the SD card and verifying it works, with screenshots):
+**→ [M5Stack CoreS3 Setup Guide](https://github.com/PetitOnes/m5-petit-firmware/blob/main/HOW_TO_SETUP_M5_CORES3.md)** (Japanese — English version coming soon)
 
-**→ [M5Stack CoreS3 Setup Guide](https://github.com/PetitOnes/m5-petit-scripts/blob/main/HOW_TO_SETUP_M5_CORES3.md)** (Japanese — English version coming soon)
-
-In short: your WiFi and name settings just go into a `config.txt` file on the SD card (no code editing needed). Flash the firmware with the Arduino IDE (a one-click browser flashing page is also in the works).
+In short: your WiFi and name settings just go into a `config.txt` file on the SD card (no code editing needed). You can flash with one click from your browser via the [M5 Petit Web Flasher](https://petitones.github.io/m5-petit-firmware/) (or with the Arduino IDE if you want to hack on the code).
 
 ## 5. Chat with it through the web app
 
