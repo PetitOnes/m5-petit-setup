@@ -22,8 +22,8 @@ WebPage(工事中)やYoutube(準備中)も見ながら進めていくことを�
 下を順番にやっていくとぷちたちをお迎えできます。
 
 1. ボディ/付属品を買う
-2. embodied-claudeの設定
-3. m5-petit-mcpの設定
+2. petit-ones（頭脳と家）の設定
+3. 部品（m5-petit-mcp など）について
 4. ボディを組み立て・書き込み設定
 5. Webアプリで会話してみる
 
@@ -112,32 +112,34 @@ WebPage(工事中)やYoutube(準備中)も見ながら進めていくことを�
 
     ぷちたちの見たものを印刷できます
 
-## 2. embodied-claudeの設定
+## 2. petit-ones（頭脳と家）の設定
 
-ぷちたちの「頭脳」となる embodied-claude をセットアップします。
+ぷちたちの「頭脳」（Claude Code）と「家」（その子の文書・記憶・設定）を用意します。
+2026 年 10 月から、入口は **[PetitOnes/petit-ones](https://github.com/PetitOnes/petit-ones)** の一つだけです（以前の embodied-claude は petit-ones に移りました）。
 
-https://github.com/lifemate-ai/embodied-claude
+https://github.com/PetitOnes/petit-ones#readme
 
-```bash
-git clone https://github.com/lifemate-ai/embodied-claude.git
-cd embodied-claude
-```
+petit-ones の README の順に進めてください:
 
-uv・Claude Code CLIのインストールなど、詳しいセットアップ手順はembodied-claude側のREADMEを参照してください。
-
-## 3. m5-petit-mcpの設定
-
-ぷち(M5デバイス)をClaudeから操作できるようにするMCPサーバーです。
-
-https://github.com/PetitOnes/m5-petit-mcp
+1. **🧰 依存環境** — git・uv・Claude Code・jq・vcs（OS ごとの入れ方が書いてあります。Windows は WSL2 の中で）
+2. **⚡ はじめかた** — `vcs import` で部品を並べる → `setup_house.py` で家を用意 → `create_character.py` で子を迎える
 
 ```bash
-git clone https://github.com/PetitOnes/m5-petit-mcp.git
-cd m5-petit-mcp
-uv sync
+git clone https://github.com/PetitOnes/petit-ones.git ~/work/petit-ones && cd ~/work/petit-ones
+vcs import src < petit.repos
+uv run python scripts/setup_house.py
+uv run python scripts/create_character.py <id> <名前> <#色> <ボディのホスト名>
 ```
 
-Claude Codeの`.mcp.json`(またはembodied-claude側のMCP設定)に`m5-petit-mcp`を追加してください。詳細はリポジトリのREADMEを参照。
+考え方（ぷちとは何か、どう育てるか）は [ぷちの教科書](https://github.com/PetitOnes/petit-textbook) にあります。
+
+## 3. 部品（m5-petit-mcp など）について
+
+ぷちを Claude から動かす MCP サーバー（[m5-petit-mcp](https://github.com/PetitOnes/m5-petit-mcp)）や、記憶・欲求・ノート・関係の部品は、**手順 2 の `vcs import` で `src/` に入っています**。別に clone する必要はありません。MCP の設定（`autonomous-mcp.json`・`chat-mcp.json`）も `create_character.py` が作ります。
+
+ボディのホスト名（`puchitaro.local` など）は手順 4 で決まるので、先に手順 4 を済ませてから `create_character.py` を実行してもかまいません。
+
+m5-petit-mcp だけを単体で試したいときは、そのリポの README を見てください。
 
 ## 4. ボディを組み立て・書き込み設定
 

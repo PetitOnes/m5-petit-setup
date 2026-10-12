@@ -23,8 +23,8 @@ We recommend following along with the WebPage (coming soon) and YouTube channel 
 Follow these steps in order to bring a Petit home.
 
 1. Buy the body / accessories
-2. Set up embodied-claude
-3. Set up m5-petit-mcp
+2. Set up petit-ones (the brain and the house)
+3. About the components (m5-petit-mcp etc.)
 4. Assemble the body / flash the firmware
 5. Chat with it through the web app
 
@@ -111,32 +111,34 @@ To avoid that, get a battery attachment. **Pick whichever of the two you like (t
 
     Lets your Petit print out what it sees.
 
-## 2. Set up embodied-claude
+## 2. Set up petit-ones (the brain and the house)
 
-Set up embodied-claude, the "brain" behind the Petits.
+This sets up the Petit's "brain" (Claude Code) and "house" (its documents, memory and settings).
+Since October 2026 there is a single entry point: **[PetitOnes/petit-ones](https://github.com/PetitOnes/petit-ones)** (the former embodied-claude moved there).
 
-https://github.com/lifemate-ai/embodied-claude
+https://github.com/PetitOnes/petit-ones#readme
 
-```bash
-git clone https://github.com/lifemate-ai/embodied-claude.git
-cd embodied-claude
-```
+Follow the petit-ones README in order:
 
-See embodied-claude's own README for detailed setup steps (installing uv, the Claude Code CLI, etc.).
-
-## 3. Set up m5-petit-mcp
-
-The MCP server that lets Claude control the Petit (your M5 device).
-
-https://github.com/PetitOnes/m5-petit-mcp
+1. **🧰 Prerequisites** — git, uv, Claude Code, jq, vcs (per-OS instructions; on Windows, inside WSL2)
+2. **⚡ Quickstart** — lay out the components with `vcs import`, prepare the house with `setup_house.py`, welcome a Petit with `create_character.py`
 
 ```bash
-git clone https://github.com/PetitOnes/m5-petit-mcp.git
-cd m5-petit-mcp
-uv sync
+git clone https://github.com/PetitOnes/petit-ones.git ~/work/petit-ones && cd ~/work/petit-ones
+vcs import src < petit.repos
+uv run python scripts/setup_house.py
+uv run python scripts/create_character.py <id> <name> <#color> <body-hostname>
 ```
 
-Add `m5-petit-mcp` to Claude Code's `.mcp.json` (or embodied-claude's own MCP config). See the repo's README for details.
+The thinking behind it (what a Petit is, how to raise one) is in the [Petit Textbook](https://github.com/PetitOnes/petit-textbook) (Japanese).
+
+## 3. About the components (m5-petit-mcp etc.)
+
+The MCP server that lets Claude drive the body ([m5-petit-mcp](https://github.com/PetitOnes/m5-petit-mcp)) and the memory, desire, notes and relations components are **already under `src/` after the `vcs import` in step 2**. No separate clone is needed, and `create_character.py` writes the MCP configuration (`autonomous-mcp.json`, `chat-mcp.json`) for you.
+
+The body's hostname (e.g. `puchitaro.local`) is decided in step 4, so it is fine to finish step 4 first and then run `create_character.py`.
+
+To try m5-petit-mcp on its own, see that repository's README.
 
 ## 4. Assemble the body / flash the firmware
 
